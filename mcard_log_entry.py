@@ -3,11 +3,10 @@ class McardLogEntry:
 
     def __init__(self, line):
         raw = line.split()
-        self.day = int(raw[0])
-        self.date = raw[1]
-        self.time = raw[2]
-        self.mcardnumber = int(raw[3])
-        self.mcardtype = raw[4]
-        self.valid = raw[5]
+        self.stop_id = int(raw[0])
+        self.get_on_datetime = raw[1]
+        self.ticket_id = int(raw[2])
+        self.ticket_type =  (raw[3])
+        self.ticket_expiration = raw[4]
         
   
