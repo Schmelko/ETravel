@@ -7,3 +7,8 @@ class McardLog:
 
     def __str__(self):
         return "{} entries in mcard_log".format(len(self.entries))
+
+    def ticket_id_unique(self):
+        return set(entry.ticket_id for entry in self.entries)
+
+     
