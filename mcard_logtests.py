@@ -14,5 +14,10 @@ class TestSolution(unittest.TestCase):
     def test_task1(self):
         self.assertEqual(len(self.mcard_log.entries), 699)
 
+    def test_task2(self):
+        expected = 699
+        result = len(self.mcard_log.ticket_id_unique())
+        self.assertEqual(expected, result)        
+
 if __name__ == '__main__':
     unittest.main()
