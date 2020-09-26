@@ -11,4 +11,5 @@ class TravelLog:
     def ticket_id_unique(self):
         return set(entry.ticket_id for entry in self.entries)
 
-     
+    def rejected_travels(self):        
+        return tuple(entry for entry in self.entries if entry.is_rejected())
