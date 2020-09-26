@@ -1,9 +1,9 @@
-from mcard_log_entry import McardLogEntry
+from mcard_log_entry import TravelLogEntry
 
-class McardLog:
+class TravelLog:
 
     def __init__(self, lines):
-        self.entries = [McardLogEntry(line) for line in lines]
+        self.entries = [TravelLogEntry(line) for line in lines]
 
     def __str__(self):
         return "{} entries in mcard_log".format(len(self.entries))

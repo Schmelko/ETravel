@@ -1,6 +1,6 @@
 import unittest
-from mcard_log import McardLog
-from mcard_log_entry import McardLogEntry
+from mcard_log import TravelLog
+from mcard_log_entry import TravelLogEntry
 
 
 class TestSolution(unittest.TestCase):
@@ -9,7 +9,7 @@ class TestSolution(unittest.TestCase):
         with open('utasadat.txt') as f:
             lines = f.readlines()
         
-        self.mcard_log = McardLog(lines)
+        self.mcard_log = TravelLog(lines)
 
     def test_task1(self):
         self.assertEqual(len(self.mcard_log.entries), 699)

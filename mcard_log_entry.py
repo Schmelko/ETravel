@@ -1,4 +1,4 @@
-class McardLogEntry:
+class TravelLogEntry:
     '''One log entry.'''
 
     def __init__(self, line):
