@@ -17,7 +17,13 @@ class TestSolution(unittest.TestCase):
     def test_task2(self):
         expected = 699
         result = len(self.travel_log.ticket_id_unique())
-        self.assertEqual(expected, result)        
+        self.assertEqual(expected, result)
+    
+    def test_task3(self):
+        expected = 21
+        results = self.travel_log.rejected_travels()
+        result = len(results)
+        self.assertEqual(expected, result)
 
 if __name__ == '__main__':
     unittest.main()
