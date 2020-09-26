@@ -1,6 +1,6 @@
 import unittest
-from mcard_log import TravelLog
-from mcard_log_entry import TravelLogEntry
+from travel_log import TravelLog
+from travel_log_entry import TravelLogEntry
 
 
 class TestSolution(unittest.TestCase):

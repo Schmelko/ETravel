@@ -1,4 +1,4 @@
-from mcard_log_entry import TravelLogEntry
+from travel_log_entry import TravelLogEntry
 
 class TravelLog:
 
