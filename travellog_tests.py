@@ -31,5 +31,13 @@ class TestSolution(unittest.TestCase):
         result = self.travel_log.find_stop_with_most_entries()
         self.assertEqual((expected_stop_nr, expected_passengers), result)
 
+    def test_task5(self):
+        expected_free = 133
+        expected_discounted = 200
+        result_free = len(self.travel_log.find_free_travels())
+        result_discounted = len(self.travel_log.find_discounted_travels())
+        self.assertEqual(expected_free, result_free)
+        self.assertEqual(expected_discounted, result_discounted)
+
 if __name__ == '__main__':
     unittest.main()

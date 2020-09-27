@@ -24,3 +24,9 @@ class TravelLog:
         
     def get_entries_by_stop_id(self, stop_id):
         return len(tuple(entry for entry in self.entries if entry.stop_id == stop_id))
+    
+    def find_free_travels(self):
+        return tuple(entry for entry in self.entries if entry.is_free())
+
+    def find_discounted_travels(self):
+        return tuple(entry for entry in self.entries if entry.is_discounted())

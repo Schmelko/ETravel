@@ -4,6 +4,9 @@ class TravelLogEntry:
     '''One log entry.'''
 
     def __init__(self, line):
+        self.free_types = set(('NYP', 'RVS', 'GYK'))
+        self.discounted_types = set(('TAB', 'NYB'))
+
         raw = line.split()
         self.stop_id = int(raw[0])
         self.get_on_datetime = datetime.strptime(raw[1], '%Y%m%d-%H%M')
@@ -22,3 +25,9 @@ class TravelLogEntry:
             return self.get_on_datetime.date() > self.ticket_expiration.date()
         else:
             return self.no_of_ticket_left == 0
+    
+    def is_free(self):
+        return self.ticket_type in self.free_types
+
+    def is_discounted(self):
+        return self.ticket_type in self.discounted_types and not self.is_rejected()
