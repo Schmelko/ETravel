@@ -30,3 +30,6 @@ class TravelLog:
 
     def find_discounted_travels(self):
         return tuple(entry for entry in self.entries if entry.is_discounted())
+
+    def find_differences(self):
+        return tuple(entry for entry in self.entries if entry.is_difference_between_expirationandgeton())
