@@ -32,7 +32,5 @@ class TravelLogEntry:
     def is_discounted(self):
         return self.ticket_type in self.discounted_types and not self.is_rejected()
 
-    def is_difference_between_expirationandgeton(self):
-        a= self.ticket_expiration = datetime.strptime(raw[4],'%Y%m%d').date()
-        b= self.get_on_datetime = datetime.strptime(raw[1],'%Y%m%d-%H%M').date()
-        return a-b 
+    def timedelta_until_expiration(self):
+        return self.ticket_expiration.date() - self.get_on_datetime.date()
