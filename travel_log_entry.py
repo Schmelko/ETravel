@@ -16,7 +16,7 @@ class TravelLogEntry:
             self.ticket_expiration = datetime.strptime(raw[4], '%Y%m%d')
         else:
             self.no_of_ticket_left = int(raw[4])
-
+        
     def is_pass(self):
         return self.ticket_type != 'JGY'
 
@@ -31,3 +31,8 @@ class TravelLogEntry:
 
     def is_discounted(self):
         return self.ticket_type in self.discounted_types and not self.is_rejected()
+
+    def is_difference_between_expirationandgeton(self):
+        a= self.ticket_expiration = datetime.strptime(raw[4],'%Y%m%d').date()
+        b= self.get_on_datetime = datetime.strptime(raw[1],'%Y%m%d-%H%M').date()
+        return a-b 
