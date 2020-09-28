@@ -1,4 +1,5 @@
 from travel_log_entry import TravelLogEntry
+from datetime import timedelta
 
 class TravelLog:
 
@@ -31,5 +32,5 @@ class TravelLog:
     def find_discounted_travels(self):
         return tuple(entry for entry in self.entries if entry.is_discounted())
 
-    def find_differences(self):
-        return tuple(entry for entry in self.entries if entry.is_difference_between_expirationandgeton())
+    def find_notifiables_of_coming_expiration(self, days):
+        return tuple(entry for entry in self.entries if entry.is_pass() and not entry.is_rejected() and entry.timedelta_until_expiration() <= timedelta(days=days))
