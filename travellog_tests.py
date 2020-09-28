@@ -40,9 +40,9 @@ class TestSolution(unittest.TestCase):
         self.assertEqual(expected_discounted, result_discounted)
     
     def test_task7(self):
-        expected_warning = 38
-        result = len(self.travel_log.find_differences())
-        self.assertEqual(expected,result)
+        expected = 38
+        result = len(self.travel_log.find_notifiables_of_coming_expiration(3))
+        self.assertEqual(expected, result)
 
 
 if __name__ == '__main__':
