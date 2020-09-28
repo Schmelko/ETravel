@@ -38,6 +38,12 @@ class TestSolution(unittest.TestCase):
         result_discounted = len(self.travel_log.find_discounted_travels())
         self.assertEqual(expected_free, result_free)
         self.assertEqual(expected_discounted, result_discounted)
+    
+    def test_task7(self):
+        expected_warning = 38
+        result = len(self.travel_log.find_differences())
+        self.assertEqual(expected,result)
+
 
 if __name__ == '__main__':
     unittest.main()
